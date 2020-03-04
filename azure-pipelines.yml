@@ -11,6 +11,17 @@ steps:
 - task: TerraformCLI@0
   inputs:
     command: 'init'
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+    backendType: 'azurerm'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'Terraorm-baendrg'
+    backendAzureRmResourceGroupLocation: 'usa east'
+    backendAzureRmStorageAccountName: 'aazibakaccounttrf'
+    backendAzureRmContainerName: 'aazibakterr'
+    backendAzureRmKey: 'k8saazibak'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
