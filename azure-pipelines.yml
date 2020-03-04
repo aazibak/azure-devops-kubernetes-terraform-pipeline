@@ -10,7 +10,7 @@ steps:
   displayName: 'Run a one-line script'
 - task: TerraformCLI@0
   inputs:
-    command: 'validate'
+    command: 'init'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
